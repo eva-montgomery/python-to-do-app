@@ -25,7 +25,19 @@ add_todo("feed the cat")
 # print the todo list again, making sure our code got added
 print(todo_list)
 
-# I nmeed to be able to delete todo's.
+# I need to be able to delete todo's.
+def delete_todo(index):
+    # del todo_list[index]
+    try: 
+        todo_list.pop(index)
+    except IndexError:
+        print(" 🐒 Sorry, we couldn't find that that one")
+
+delete_todo(0)    
+print(todo_list)
+delete_todo(0)
+print(todo_list)
+
 
 # I need to print my todo's
 
