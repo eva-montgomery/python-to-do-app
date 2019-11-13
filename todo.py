@@ -1,29 +1,27 @@
-# to-do's: 
-# -> todo's are a collection of individual variables in list as a string
-
-# choose one -> adding a todo
-# Enter a todo -> prompt user for the new todo then .append() to list of todo's
-
-# Use a for loop to print each todo in our list of todo's
-
-# how can I delete item from a list?
-#  --> del keyword and the index
-# ex. del pets[1] -> deletes second item in pet list
-###################################
 
 # keep track of todo's unsing a list.
 todo_list = []
 
+def print_todos():
+    if len(todo_list) == 0:
+        print("You have nothing to do")
+    else:
+        for count, todo in enumerate(todo_list):
+            print(f"{count}: {todo}")
+
 # I neeed a way to add todos.
 def add_todo(todo):
-    # We receive a todi, which is a string
+    # We receive a todo, which is a string
     todo_list.append(todo)
+
 # print the empty todo list
-print(todo_list)
+# print_todos()
 # add a todo my calling our function
+
 add_todo("feed the cat")
+
 # print the todo list again, making sure our code got added
-print(todo_list)
+# print_todos()
 
 # I need to be able to delete todo's.
 def delete_todo(index):
@@ -33,12 +31,44 @@ def delete_todo(index):
     except IndexError:
         print(" 🐒 Sorry, we couldn't find that that one")
 
-delete_todo(0)    
-print(todo_list)
-delete_todo(0)
-print(todo_list)
-
+# delete_todo(0)    
+# print_todos()
+# delete_todo(0)
+# print_todos()
 
 # I need to print my todo's
+def print_todos():
+    for todo in todo:
+        print_todo()
 
 # Show user the main menu.
+
+def main():
+    menu = """
+    The Best toDo App Ever
+    =====================
+    0. Quit
+    1. Print the Todos
+    2. Add a Todo
+    3. Complete a Todo
+    """
+    is_running = True
+    while is_running:
+        print(menu)
+        choice = input("Choose one: ")
+        if choice == "0":
+            is_running = False
+            print("Thank you using the todo app")
+        elif choice == "1":
+            pass
+        elif choice == "2":
+            # Prompt them for what they want to do
+            new_todo = input("What do you need to do? ")
+            add_todo(new_todo)
+        elif choice == "3":
+            index_to_complete = int(input("Complete which todo? "))
+            delete_todo(index_to_complete)
+        else:
+            print("Thank you using the todo app")
+
+main()        
